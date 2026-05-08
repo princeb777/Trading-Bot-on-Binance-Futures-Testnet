@@ -1,1 +1,5 @@
 python-binance
+python-dotenv
+click
+rich
+cryptography
