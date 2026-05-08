@@ -3,8 +3,8 @@ class ValidationError(Exception):
 
 def validate_symbol(symbol: str) -> str:
     symbol = symbol.upper().strip()
-    if not symbol.isalnum():
-        raise ValidationError(f"Invalid symbol format: {symbol}. Must be alphanumeric.")
+    if not symbol.replace('_', '').replace('-', '').isalnum():
+        raise ValidationError(f"Invalid symbol format: {symbol}. Must contain only letters, numbers, underscores, or dashes.")
     return symbol
 
 def validate_side(side: str) -> str:
